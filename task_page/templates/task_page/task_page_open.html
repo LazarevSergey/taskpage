@@ -1,0 +1,19 @@
+{% extends 'menu/base.html' %}
+{% block title %}
+    {{ section.name }}
+{% endblock %}
+{% block content %}
+    <h1 align="center">{{ section.name }}</h1>
+    <h4>Задача:</h4>
+    {% autoescape off %}
+        {% for task in tasks.items %}
+            {{ task }}
+        {% endfor %}
+    {% endautoescape %}
+    <form enctype="multipart/form-data" method="post">
+        <p><input type="file" name="f"></p>
+        <br>
+        <p><input type="submit" value="Отправить"></p>
+        <p><input type="submit" value="Сдаться"></p>
+  </form>
+{% endblock %}
